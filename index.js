@@ -28,15 +28,29 @@ app.set('views', path.resolve(__dirname, './views'));
 // });
 
 app.get('/', (req, res) => {
-  res.render('index', { name: 'Alex', layout: 'main' });
+  res.render('map', { activeLink: 'home', layout: 'with-map' });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects', { activeLink: 'projects', layout: 'main' });
 });
 
 app.get('/project', (req, res) => {
-  res.render('project', { name: 'Alex', layout: 'main' });
+  res.render('project', { activeLink: 'projects', layout: 'main' });
+});
+
+app.get('/settings', (req, res) => {
+  res.render('settings', { activeLink: 'settings', layout: 'main' });
+});
+
+app.get('/admin', (req, res) => {
+  res.render('admin', { activeLink: 'admin', layout: 'main' });
 });
 
 app.get('/project/device', (req, res) => {
-  res.render('device', { name: 'Alex', layout: 'main' });
+  res.render('device', { activeLink: 'projects', layout: 'main' });
 });
+
+app.use(express.static('public'));
 
 app.listen(3000, () => console.log('Server running on port 3000'));
