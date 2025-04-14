@@ -1,0 +1,178 @@
+<style>
+
+  .chart-container {
+    width: "100%";
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  .axis-label {
+    font-size: 12px;
+    fill: #666;
+  }
+  .grid-line {
+    stroke: #e0e0e0;
+    stroke-width: 1;
+  }
+  .data-line {
+    stroke: #3b82f6;
+    stroke-width: 3;
+    fill: none;
+  }
+  .data-point {
+    fill: #3b82f6;
+    stroke: white;
+    stroke-width: 2;
+  }
+  .axis-line {
+    stroke: #666;
+    stroke-width: 1;
+  }
+  .tick-label {
+    font-size: 10px;
+    fill: #666;
+  }
+  .legend {
+    margin-left: 24px;
+    font-size: 14px;
+  }
+  .legend-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background-color: #3b82f6;
+  }
+
+</style>
+
+<div class="chart-container">
+  <svg viewBox="0 0 800 450">
+    <!-- Background grid -->
+    <line class="grid-line" x1="50" y1="50" x2="50" y2="400"></line>
+    <line class="grid-line" x1="150" y1="50" x2="150" y2="400"></line>
+    <line class="grid-line" x1="250" y1="50" x2="250" y2="400"></line>
+    <line class="grid-line" x1="350" y1="50" x2="350" y2="400"></line>
+    <line class="grid-line" x1="450" y1="50" x2="450" y2="400"></line>
+    <line class="grid-line" x1="550" y1="50" x2="550" y2="400"></line>
+    <line class="grid-line" x1="650" y1="50" x2="650" y2="400"></line>
+    <line class="grid-line" x1="750" y1="50" x2="750" y2="400"></line>
+
+    <line class="grid-line" x1="50" y1="50" x2="750" y2="50"></line>
+    <line class="grid-line" x1="50" y1="120" x2="750" y2="120"></line>
+    <line class="grid-line" x1="50" y1="190" x2="750" y2="190"></line>
+    <line class="grid-line" x1="50" y1="260" x2="750" y2="260"></line>
+    <line class="grid-line" x1="50" y1="330" x2="750" y2="330"></line>
+    <line class="grid-line" x1="50" y1="400" x2="750" y2="400"></line>
+
+    <!-- X and Y axes -->
+    <line class="axis-line" x1="50" y1="400" x2="750" y2="400"></line>
+    <line class="axis-line" x1="50" y1="50" x2="50" y2="400"></line>
+
+    <!-- X-axis labels -->
+    <text class="tick-label" x="50" y="420" text-anchor="middle">
+      Jan
+    </text>
+    <text class="tick-label" x="150" y="420" text-anchor="middle">
+      Mar
+    </text>
+    <text class="tick-label" x="250" y="420" text-anchor="middle">
+      May
+    </text>
+    <text class="tick-label" x="350" y="420" text-anchor="middle">
+      Jul
+    </text>
+    <text class="tick-label" x="450" y="420" text-anchor="middle">
+      Sep
+    </text>
+    <text class="tick-label" x="550" y="420" text-anchor="middle">
+      Nov
+    </text>
+    <text class="tick-label" x="650" y="420" text-anchor="middle">
+      Jan
+    </text>
+    <text class="tick-label" x="750" y="420" text-anchor="middle">
+      Mar
+    </text>
+
+    <!-- Y-axis labels -->
+    <text class="tick-label" x="40" y="400" text-anchor="end">
+      0
+    </text>
+    <text class="tick-label" x="40" y="330" text-anchor="end">
+      20
+    </text>
+    <text class="tick-label" x="40" y="260" text-anchor="end">
+      40
+    </text>
+    <text class="tick-label" x="40" y="190" text-anchor="end">
+      60
+    </text>
+    <text class="tick-label" x="40" y="120" text-anchor="end">
+      80
+    </text>
+    <text class="tick-label" x="40" y="50" text-anchor="end">
+      100
+    </text>
+
+    <!-- Axis labels -->
+    <text class="axis-label" x="400" y="445" text-anchor="middle">
+      Month
+    </text>
+    <text
+      class="axis-label"
+      transform="rotate(-90)"
+      x="-225"
+      y="15"
+      text-anchor="middle"
+    >
+      Sales ($K)
+    </text>
+
+    <!-- Data line -->
+    <polyline
+      class="data-line"
+      points="
+                50,350
+                100,320
+                150,280
+                200,230
+                250,200
+                300,150
+                350,120
+                400,100
+                450,130
+                500,170
+                550,220
+                600,250
+                650,200
+                700,180
+                750,150
+            "
+    ></polyline>
+
+    <!-- Data points -->
+    <circle class="data-point" cx="50" cy="350" r="5"></circle>
+    <circle class="data-point" cx="100" cy="320" r="5"></circle>
+    <circle class="data-point" cx="150" cy="280" r="5"></circle>
+    <circle class="data-point" cx="200" cy="230" r="5"></circle>
+    <circle class="data-point" cx="250" cy="200" r="5"></circle>
+    <circle class="data-point" cx="300" cy="150" r="5"></circle>
+    <circle class="data-point" cx="350" cy="120" r="5"></circle>
+    <circle class="data-point" cx="400" cy="100" r="5"></circle>
+    <circle class="data-point" cx="450" cy="130" r="5"></circle>
+    <circle class="data-point" cx="500" cy="170" r="5"></circle>
+    <circle class="data-point" cx="550" cy="220" r="5"></circle>
+    <circle class="data-point" cx="600" cy="250" r="5"></circle>
+    <circle class="data-point" cx="650" cy="200" r="5"></circle>
+    <circle class="data-point" cx="700" cy="180" r="5"></circle>
+    <circle class="data-point" cx="750" cy="150" r="5"></circle>
+  </svg>
+
+  <div class="legend">
+    <span class="legend-color"></span>
+    <span>
+      Monthly Sales
+    </span>
+  </div>
+</div>
