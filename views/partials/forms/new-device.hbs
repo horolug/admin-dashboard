@@ -1,0 +1,21 @@
+<form class="mt-6" action="http://localhost:3000/projects">
+  <script>
+  </script>
+  <div class="space-y-4">
+    {{> forms/device/device-name}} 
+    {{> forms/device/device-info}}
+    {{> forms/device/device-details}}
+
+    {{> content/cards/deployment/deployment-progress}}
+    {{> content/cards/deployment/deployment-success}} 
+  </div>
+
+  <div class="mt-6 flex justify-end">
+    <button
+      type="button"
+      class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    >
+      Add new device
+    </button>
+  </div>
+</form>

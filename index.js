@@ -6,26 +6,16 @@ const __dirname = path.resolve();
 
 const app = express();
 
-console.log('__dirname', __dirname);
 app.engine(
   'hbs',
   engine({
     extname: '.hbs',
-    // defaultLayout:  path.join(__dirname, './views/layouts/main'),
     layoutsDirDir: path.resolve(__dirname, './views/layouts/'),
     partialsDir: path.resolve(__dirname, './views/partials/'),
   }),
 );
 app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, './views'));
-
-// app.set('views', path.join(__dirname, './views'));
-
-// hbs.getPartials().then(function (partials) {
-//   console.log(partials);
-//   // => { 'foo/bar': [Function],
-//   // =>    title: [Function] }
-// });
 
 app.get('/', (req, res) => {
   res.render('map', { activeLink: 'home', layout: 'with-map' });
@@ -53,6 +43,10 @@ app.get('/admin', (req, res) => {
 
 app.get('/project/device', (req, res) => {
   res.render('device', { activeLink: 'projects', layout: 'main' });
+});
+
+app.get('/project/add-device', (req, res) => {
+  res.render('add-device', { activeLink: 'projects', layout: 'main' });
 });
 
 app.use(express.static('public'));
