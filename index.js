@@ -35,6 +35,10 @@ app.get('/projects', (req, res) => {
   res.render('projects', { activeLink: 'projects', layout: 'main' });
 });
 
+app.get('/projects/create-project', (req, res) => {
+  res.render('create-project', { activeLink: 'projects', layout: 'main' });
+});
+
 app.get('/project', (req, res) => {
   res.render('project', { activeLink: 'projects', layout: 'main' });
 });
